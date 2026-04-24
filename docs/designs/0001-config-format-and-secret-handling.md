@@ -6,10 +6,11 @@ tags: [configuration, security, cli]
 created: 2026-04-24
 accepted: 2026-04-24
 implemented: 2026-04-24
+spec-sections: ["docs/spec/02-forge-doctor.md"]
 superseded-by:
 ---
 
-# Design 0001: Config Format and Secret Handling
+# ADR-0001: Config Format and Secret Handling
 
 ## Status
 
@@ -97,6 +98,20 @@ Design choices:
 - Unknown config fields should fail validation so misspelled requirements do
   not silently pass.
 
+## Rationale
+
+This decision optimizes for a small, reviewable bootstrap contract with a
+conservative security boundary.
+
+Evaluation criteria:
+
+- Simplicity: TOML keeps the first config easy to author and review.
+- Correctness: unknown fields fail fast, reducing silent setup drift.
+- Compatibility: future fields can be additive where practical.
+- Security: config stores secret names and environment references, never values.
+- Delivery risk: environment-only secrets and generic HTTP checks keep the MVP
+  narrow enough to test thoroughly.
+
 ## Operability and Observability
 
 `forge-cli` is a local CLI, so the primary operational surface is terminal
@@ -116,7 +131,7 @@ The first config contract is intentionally small. Compatibility expectations:
 - config may name environment variables but must not contain secret values
 - unknown config fields fail fast
 - future fields should be additive where practical
-- incompatible config changes should be captured in a follow-up design doc
+- incompatible config changes should be captured in a follow-up ADR
 - registry auth behavior should remain environment-backed unless a later design
   explicitly changes the security model
 
@@ -147,21 +162,21 @@ The first config contract is intentionally small. Compatibility expectations:
 - Drawbacks: expands scope before the generic readiness workflow is proven.
   Rejected for the first milestone.
 
-## Implementation Plan
+## Implementation Phases
 
-- **Phase 1: Project scaffold** - create a Rust Cargo binary named `forge` with
-  `clap`, TOML config parsing, and test dependencies.
-- **Phase 2: Config model** - deserialize `forge.bootstrap.toml`, reject unknown
-  fields, and validate required identifiers.
-- **Phase 3: Local checks** - implement tool checks and environment-variable
+- [x] **Phase 1: Project scaffold** - create a Rust Cargo binary named `forge`
+  with `clap`, TOML config parsing, and test dependencies.
+- [x] **Phase 2: Config model** - deserialize `forge.bootstrap.toml`, reject
+  unknown fields, and validate required identifiers.
+- [x] **Phase 3: Local checks** - implement tool checks and environment-variable
   presence checks without printing secret values.
-- **Phase 4: Registry checks** - implement bounded generic HTTP checks with
+- [x] **Phase 4: Registry checks** - implement bounded generic HTTP checks with
   optional environment-backed auth.
-- **Phase 5: Reporting and exits** - render OK/WARN/ERR reports and return
+- [x] **Phase 5: Reporting and exits** - render OK/WARN/ERR reports and return
   non-zero when required checks fail.
-- **Phase 6: Tests and quality gate** - add focused unit/integration tests and
-  run `cargo fmt`, `cargo test`, and `cargo clippy --all-targets --all-features
-  -- -D warnings`.
+- [x] **Phase 6: Tests and quality gate** - add focused unit/integration tests
+  and run `cargo fmt`, `cargo test`, and `cargo clippy --all-targets
+  --all-features -- -D warnings`.
 
 ## Consequences
 
@@ -188,6 +203,12 @@ The first config contract is intentionally small. Compatibility expectations:
 - Should `forge` eventually provide JSON output for CI or agent consumption?
 - Should auth support be limited to bearer and basic auth until a concrete need
   appears?
+
+## Spec Impact
+
+Implemented user-visible behavior is captured in:
+
+- `docs/spec/02-forge-doctor.md`
 
 ## Design Drift
 

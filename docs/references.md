@@ -12,7 +12,7 @@ These references point in one direction:
 - the repository should be the source of truth for product intent, design
   history, workflow, and contributor commands
 - specs describe behavior and evolve with the product
-- design docs capture technical reasoning for a specific problem and preserve
+- ADRs capture technical reasoning for a specific problem and preserve
   enough theory for future maintainers
 - process should create execution, not replace it
 - operational concerns are engineering concerns, not afterthoughts
@@ -37,6 +37,9 @@ These references point in one direction:
 - [Oxide RFD 0001: Requests for Discussion](https://rfd.shared.oxide.computer/rfd/0001)
   Shaped the repository's RFD-inspired spec structure: discussion first,
   decision record after.
+- [Rue ADRs](https://github.com/steveklabnik/rue/tree/trunk/docs/designs)
+  Shaped the `docs/designs/` direction: compact decision records with context,
+  decision, implementation phases, and consequences.
 - [Effective Design Docs](https://mmapped.blog/posts/31-effective-design-docs)
   Drove the split between `docs/spec/` and `docs/designs/`.
 - [A3 - Avoid Memos with Agenda](https://entropicthoughts.com/a3-avoid-memos-with-an-agenda)

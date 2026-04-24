@@ -58,7 +58,7 @@ Do not read the whole repo by default.
 ## Working Rules
 
 1. Keep process docs in `docs/process/`.
-2. Keep large design docs in `docs/designs/`.
+2. Keep ADR-style technical decision records in `docs/designs/`.
 3. Keep stable behavioral documentation in `docs/spec/`.
 4. Put high-level project operating context in `docs/development.md`.
 5. Put system shape in `docs/architecture.md`.
@@ -70,8 +70,8 @@ Do not read the whole repo by default.
 ## Document Taxonomy
 
 - `docs/spec/` is for stable behavior, scope, and external contracts
-- `docs/designs/` is for technical decisions, tradeoffs, and implementation
-  plans
+- `docs/designs/` is for ADR-style technical decisions, tradeoffs, and
+  implementation plans
 - `docs/architecture.md` is the project-wide structural overview
 - `docs/development.md` is the concrete project's build, test, run, and
   environment guide

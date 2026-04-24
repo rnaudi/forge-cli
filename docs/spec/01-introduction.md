@@ -57,9 +57,9 @@ Early draft. The initial command behavior is defined in
 `docs/spec/02-forge-doctor.md`. Product direction and candidate future command
 families are defined in `docs/spec/03-product-direction.md`.
 
-## Relationship to Technical Design Docs
+## Relationship to ADRs
 
 This specification describes expected behavior and product intent.
 
-Technical implementation decisions should be captured separately in
+Technical implementation decisions should be captured separately as ADRs in
 `docs/designs/`.

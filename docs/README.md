@@ -20,7 +20,7 @@ Use it for:
 ## Structured Project Docs
 
 - [spec/README.md](spec/README.md): stable behavior and contract docs
-- [designs/README.md](designs/README.md): technical design docs
+- [designs/README.md](designs/README.md): architecture decision records
 - [process/README.md](process/README.md): workflow guidance
 - [notes/README.md](notes/README.md): append-only topical notes, discoveries,
   and operational breadcrumbs
@@ -36,7 +36,7 @@ Use it for:
 ## Rule of Thumb
 
 - use `spec/` for what should be built and why
-- use `designs/` for technical choices and tradeoffs
+- use `designs/` for ADR-style technical decisions and tradeoffs
 - use `architecture.md` for the system shape as a whole
 - use `development.md` for concrete contributor commands and environment rules
 - use `security.md` for secrets, protected data, and access boundaries

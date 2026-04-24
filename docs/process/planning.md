@@ -107,24 +107,26 @@ The spec should cover:
 - open questions
 - acceptance criteria or stable behavioral expectations
 
-3. If a design doc is needed, copy the design template:
+3. If an ADR is needed, copy the design template:
 
 ```bash
 cp docs/designs/0000-template.md docs/designs/NNNN-<title>.md
 ```
 
-4. Fill in the key design sections:
+4. Fill in the key ADR sections:
 
 - Summary
 - Context
 - Mental Model
 - Goals / Non-goals
 - Decision
+- Rationale
+- Alternatives Considered
+- Implementation Phases
 - Operability and Observability
 - Stability and Compatibility
-- Alternatives Considered
-- Implementation Plan
 - Consequences
+- Spec Impact
 - Design Drift
 
 5. Present the draft and wait for approval.

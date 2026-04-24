@@ -66,7 +66,7 @@ implementation plans.
 ## Relationship to Other Docs
 
 - `docs/architecture.md` explains how the system is shaped
-- `docs/designs/` contains design docs for major changes
+- `docs/designs/` contains ADRs for major technical decisions
 - `docs/development.md` explains how to build, test, and operate the project
 
 ## Functional Spec vs Design Doc

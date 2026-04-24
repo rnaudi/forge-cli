@@ -136,5 +136,5 @@ How will we know this spec produced the intended outcome?
 
 ## References
 
-- related design docs in `docs/designs/`
+- related ADRs in `docs/designs/`
 - related architecture or process docs

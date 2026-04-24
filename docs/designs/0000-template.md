@@ -1,15 +1,16 @@
 ---
 id: 0000
-title: Design Title
+title: ADR Title
 status: proposal
 tags: []
 created: YYYY-MM-DD
 accepted:
 implemented:
+spec-sections: []
 superseded-by:
 ---
 
-# Design 0000: Title
+# ADR-0000: Title
 
 ## Status
 
@@ -17,7 +18,7 @@ Proposal
 
 ## Summary
 
-One paragraph explaining the decision.
+One paragraph explaining the decision and why it matters.
 
 ## Context
 
@@ -46,8 +47,46 @@ Include:
 
 ## Decision
 
-What we are going to do. Include the key design choices and the reasons they
-were selected.
+What we are going to do.
+
+Include:
+
+- user-visible behavior affected by the decision
+- internal boundaries or data structures affected by the decision
+- compatibility or migration rules
+- security constraints
+
+## Rationale
+
+Why this decision is preferable to the alternatives.
+
+Name the evaluation criteria explicitly:
+
+- simplicity
+- correctness
+- compatibility
+- security
+- operational cost
+- delivery risk
+
+## Alternatives Considered
+
+### Option 1
+
+- benefits
+- drawbacks
+- why rejected or deferred
+
+### Option 2
+
+- benefits
+- drawbacks
+- why rejected or deferred
+
+## Implementation Phases
+
+- [ ] **Phase 1: Name** - Beads issue when available
+- [ ] **Phase 2: Name** - Beads issue when available
 
 ## Operability and Observability
 
@@ -73,23 +112,6 @@ Include:
 - data migration or rollback concerns
 - dependency adoption or upgrade risk
 
-## Alternatives Considered
-
-### Option 1
-
-- benefits
-- drawbacks
-
-### Option 2
-
-- benefits
-- drawbacks
-
-## Implementation Plan
-
-- **Phase 1: Name** - intended outcome
-- **Phase 2: Name** - intended outcome
-
 ## Consequences
 
 ### Positive
@@ -103,6 +125,11 @@ Include:
 ## Open Questions
 
 - Question 1?
+
+## Spec Impact
+
+List user-visible behavior that should move into `docs/spec/` when this ADR is
+implemented.
 
 ## Design Drift
 
