@@ -1,0 +1,14 @@
+[[tools]]
+name = "Rust compiler"
+command = "rustc"
+required = true
+
+[[tools]]
+name = "Cargo"
+command = "cargo"
+required = true
+
+[[tools]]
+name = "Jujutsu"
+command = "jj"
+required = true
