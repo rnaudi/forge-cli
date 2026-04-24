@@ -26,6 +26,17 @@ Suggested states:
 
 What problem exists today? Why does it matter? Who is affected?
 
+## Standard and Current Condition
+
+Describe the expected or desired condition, then describe the current condition.
+
+Make the gap explicit:
+
+- standard condition
+- current condition
+- why the gap matters now
+- evidence or examples
+
 ## Goals
 
 - ...
@@ -40,6 +51,13 @@ What problem exists today? Why does it matter? Who is affected?
 - operators
 - developers
 - business stakeholders
+
+## Cause Analysis
+
+What appears to be causing the gap between the current condition and the target
+condition?
+
+Distinguish evidence from assumptions.
 
 ## Proposed Behavior
 
@@ -65,6 +83,14 @@ Capture relevant constraints such as:
 ## Acceptance Criteria
 
 - ...
+
+## Follow-up Measurement
+
+How will we know this spec produced the intended outcome?
+
+- signal to measure
+- when to check it
+- who or what owns follow-up
 
 ## Open Questions
 

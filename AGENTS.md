@@ -33,12 +33,21 @@ Task-specific docs:
 - implementation work: `docs/process/implementation.md`
 - review work: `docs/process/code-review.md`
 - commit work: `docs/process/committing.md`
+- operability work: `docs/process/operability.md`
+- stewardship or triage work: `docs/process/stewardship.md`
 - tool or workflow setup: `workflows/README.md`
+- bootstrap setup: `workflows/bootstrap.md`
+- CI or automation setup: `workflows/ci.md`
+- commit message style: `docs/process/committing.md`
+- security, secrets, or protected data: `docs/security.md`
 
 Project-specific context:
 
 - development commands: `docs/development.md`
 - architecture: `docs/architecture.md`
+- bootstrap contract: `workflows/bootstrap.md`
+- CI and quality gates: `workflows/ci.md`
+- security and secret handling: `docs/security.md`
 - first milestone behavior: `docs/spec/02-forge-doctor.md`
 - initial config and secret-handling ADR:
   `docs/designs/0001-config-format-and-secret-handling.md`
@@ -54,6 +63,8 @@ Do not read the whole repo by default.
 5. Put system shape in `docs/architecture.md`.
 6. Put concrete tool commands in `workflows/`.
 7. Do not print, persist, log, or commit secret values.
+8. Put lightweight project status surfaces in `devhub/` when they become useful.
+9. Create commits noninteractively with `jj commit -m "<message>"`.
 
 ## Document Taxonomy
 
@@ -68,6 +79,10 @@ Do not read the whole repo by default.
 - `docs/notes/` is for low-friction notes that are not yet curated docs
 - `workflows/` is for concrete adapters such as version control and issue
   tracking
+- `.github/workflows/` is for GitHub Actions automation that enforces required
+  repository checks
+- `devhub/` is for project status pages generated or maintained from repo data
+- `docs/security.md` is for secrets, protected data, and access-boundary rules
 
 ## Canonical Lifecycle
 

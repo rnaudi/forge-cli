@@ -48,6 +48,10 @@ self-review checklist.
 - naming and structure are clear
 - comments explain intent, not trivia
 - complexity is justified
+- behavior is discoverable from local context where practical
+- names are stable and searchable across boundaries
+- new abstractions earn their complexity
+- no private mini-framework is introduced without an explicit design reason
 
 ### 6. Contract Fidelity
 
@@ -60,6 +64,16 @@ self-review checklist.
 - obvious regressions?
 - surprising cost or latency?
 - rollout or migration risk?
+- health check, rollback, or recovery path affected?
+- backpressure, retries, idempotency, or load shedding affected?
+- structured telemetry still answers "what changed?" and "who is affected?"
+
+### 8. Dependencies and Automation
+
+- any new dependency justified by real value?
+- transitive dependency, license, security, or maintenance risk considered?
+- dependency upgrade verified against project-specific behavior?
+- automation adds signal instead of alert or PR noise?
 
 ## Review Norms
 

@@ -1,7 +1,7 @@
 # Jujutsu + bd Workflow
 
-This is the default workflow adapter for the template. It is optional: replace
-it when a project chooses different tools.
+This is the default workflow adapter for `forge-cli`. `jj` is active now; `bd`
+is intended for follow-up tracking when the project needs it.
 
 ## Tools
 
@@ -15,6 +15,9 @@ jj status
 jj diff
 bd ready --json
 ```
+
+If `bd` is not installed or tracking is not needed yet, use `jj status` and
+`jj diff` only.
 
 ## Create Tracking
 
@@ -56,3 +59,6 @@ jj status
 
 Commit `.beads/issues.jsonl` with related code or docs changes when `bd`
 tracking changed.
+
+Always pass `-m` to `jj commit`. Do not use editor-driven `jj commit` in the
+normal workflow.

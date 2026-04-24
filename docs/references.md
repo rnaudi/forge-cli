@@ -5,6 +5,23 @@ This document captures a small set of readings that materially shaped `forge`.
 The goal is not to preserve a reading log. The goal is to keep the strongest
 inputs behind the repo's operating principles.
 
+## Operating Doctrine
+
+These references point in one direction:
+
+- the repository should be the source of truth for product intent, design
+  history, workflow, and contributor commands
+- specs describe behavior and evolve with the product
+- design docs capture technical reasoning for a specific problem and preserve
+  enough theory for future maintainers
+- process should create execution, not replace it
+- operational concerns are engineering concerns, not afterthoughts
+- automation should reduce toil and noise, not create rituals or alert fatigue
+- local-first, searchable, version-controlled context beats scattered
+  management systems
+- agents do not lower the bar for understanding, review, provenance, or
+  maintainability
+
 ## Execution Over Theater
 
 - [Ship Software That Does Nothing](https://kerrick.blog/articles/2025/ship-software-that-does-nothing/)
@@ -61,6 +78,8 @@ inputs behind the repo's operating principles.
 
 ## Testing and Review Culture
 
+- [Go Commit Messages](https://go.dev/wiki/CommitMessage)
+  Shaped the `area: lowercase summary` convention used for forge commits.
 - [Write tests. Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests)
   Default testing philosophy should be explicit and pragmatic.
 - [Look for What's True](https://dubroy.com/blog/look-for-whats-true/)

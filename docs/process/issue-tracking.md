@@ -3,8 +3,8 @@
 Use the tracker chosen by the project. Tracking can be local, hosted, or absent
 for very small projects.
 
-The default template adapter uses `bd` and is documented in
-`../../workflows/jj-bd.md`.
+The default project adapter uses `bd` when tracking is needed and is documented
+in `../../workflows/jj-bd.md`.
 
 ## Why Track Work
 

@@ -121,4 +121,7 @@ Cargo is the build system:
 
 - `docs/spec/02-forge-doctor.md`
 - `docs/designs/0001-config-format-and-secret-handling.md`
+- `docs/security.md`
 - `docs/development.md`
+- `workflows/bootstrap.md`
+- `workflows/ci.md`

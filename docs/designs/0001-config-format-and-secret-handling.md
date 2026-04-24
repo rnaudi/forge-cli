@@ -29,6 +29,16 @@ environment variables, and private registry readiness. The config must be easy
 for humans and agents to review in a repository while keeping actual secret
 material outside source control.
 
+## Mental Model
+
+`forge.bootstrap.toml` is a manifest of bootstrap requirements, not a store of
+bootstrap material. It names what must exist locally. The operating environment
+supplies sensitive values. `forge` probes those requirements and reports only
+safe identities and outcomes.
+
+The key invariant is that a report can help a user fix setup without revealing
+the values used to check setup.
+
 ## Goals / Non-goals
 
 ### Goals
@@ -86,6 +96,29 @@ Design choices:
   request and is never included in report details.
 - Unknown config fields should fail validation so misspelled requirements do
   not silently pass.
+
+## Operability and Observability
+
+`forge-cli` is a local CLI, so the primary operational surface is terminal
+output and process exit status.
+
+- `forge doctor` is the smoke check for a checkout.
+- Registry checks use bounded HTTP timeouts.
+- Reports use OK/WARN/ERR statuses with safe names and remediation detail.
+- The command exits non-zero when required checks fail, which makes it usable in
+  scripts and future CI checks.
+- The MVP does not write logs or telemetry.
+
+## Stability and Compatibility
+
+The first config contract is intentionally small. Compatibility expectations:
+
+- config may name environment variables but must not contain secret values
+- unknown config fields fail fast
+- future fields should be additive where practical
+- incompatible config changes should be captured in a follow-up design doc
+- registry auth behavior should remain environment-backed unless a later design
+  explicitly changes the security model
 
 ## Alternatives Considered
 
@@ -155,6 +188,12 @@ Design choices:
 - Should `forge` eventually provide JSON output for CI or agent consumption?
 - Should auth support be limited to bearer and basic auth until a concrete need
   appears?
+
+## Design Drift
+
+This design should be revisited if `forge` starts managing secret values,
+writing local profiles, supporting ecosystem-specific registry models as the
+default path, or reading configuration from outside the repository checkout.
 
 ## Future Work
 

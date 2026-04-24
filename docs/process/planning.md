@@ -5,7 +5,7 @@ This document describes how to plan and design new work.
 The key document split is:
 
 - `docs/spec/` for stable behavior, scope, and contracts
-- `docs/designs/` for technical decisions, tradeoffs, and phased implementation
+- `docs/designs/` for technical decisions, tradeoffs, and implementation plans
 
 ## When to Plan
 
@@ -32,6 +32,7 @@ Before planning, make sure you understand:
 4. Is there related ready work in the project's tracker?
 5. Is this primarily a product/behavior question, a technical implementation
    question, or both?
+6. What is the smallest executable validation path?
 
 Ask clarifying questions if the scope is ambiguous.
 
@@ -78,6 +79,7 @@ Create a brief plan that states:
 - likely files or areas affected
 - tests or validation needed
 - risks or unknowns
+- whether any decision needs to be preserved outside chat
 
 After approval, create one tracking item if the project uses a tracker. Use the
 selected adapter in `../../workflows/`.
@@ -97,9 +99,10 @@ selected adapter in `../../workflows/`.
 
 The spec should cover:
 
-- problem and scope
+- problem, current condition, and target condition
 - goals and non-goals
 - user or operator impact
+- evidence or cause analysis
 - constraints
 - open questions
 - acceptance criteria or stable behavioral expectations
@@ -114,11 +117,15 @@ cp docs/designs/0000-template.md docs/designs/NNNN-<title>.md
 
 - Summary
 - Context
+- Mental Model
 - Goals / Non-goals
 - Decision
+- Operability and Observability
+- Stability and Compatibility
 - Alternatives Considered
 - Implementation Plan
 - Consequences
+- Design Drift
 
 5. Present the draft and wait for approval.
 
@@ -126,6 +133,21 @@ cp docs/designs/0000-template.md docs/designs/NNNN-<title>.md
    phase if the project uses a tracker.
 
 7. Link the tracking items from the spec or design doc only when useful.
+
+## Decision Memory
+
+If a planning discussion happens in a meeting or chat and produces a real
+decision, preserve the outcome in the repo.
+
+At minimum, capture:
+
+- decision
+- rationale
+- alternatives considered
+- follow-up owner or tracking item
+- links to the affected spec, design doc, or note
+
+Use `docs/notes/` for rough memory when the decision is not yet curated.
 
 ## Step 4: Get Approval
 

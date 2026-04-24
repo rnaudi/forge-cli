@@ -40,10 +40,12 @@ If needed, create subtasks using the selected workflow adapter.
    scope.
 2. Update architecture or development docs if the project-wide shape or
    contributor workflow changed.
-3. Add or update tests first when practical.
-4. Make code changes.
-5. Run the fastest relevant verification.
-6. For large work, update tracking and any affected specs or design docs.
+3. Update operability docs if the change affects deploy, rollback,
+   observability, cost, capacity, or incident response.
+4. Add or update tests first when practical.
+5. Make code changes.
+6. Run the fastest relevant verification.
+7. For large work, update tracking and any affected specs or design docs.
 
 ## Step 4: Verify
 

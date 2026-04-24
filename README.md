@@ -17,6 +17,13 @@ The first milestone focuses on:
 `forge` does not manage secrets, fetch secret values, write shell profiles, or
 try to support every registry ecosystem in its initial scope.
 
+## Operating Biases
+
+- Keep bootstrap requirements in the repo.
+- Prefer executable checks over setup lore.
+- Report missing access without exposing secret values.
+- Keep workflow defaults local-first and version-controlled.
+
 ## Commands
 
 Initial commands:

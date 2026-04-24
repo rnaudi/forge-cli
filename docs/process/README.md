@@ -28,6 +28,8 @@ If the repo is already specialized or the task is ordinary project work:
 | Implement approved work | [implementation.md](implementation.md) |
 | Review a change | [code-review.md](code-review.md) |
 | Prepare a commit | [committing.md](committing.md) |
+| Design operational behavior | [operability.md](operability.md) |
+| Triage or maintain project queues | [stewardship.md](stewardship.md) |
 | Use or replace concrete tools | [../../workflows/README.md](../../workflows/README.md) |
 | Decide tracking behavior | [issue-tracking.md](issue-tracking.md) |
 
@@ -61,10 +63,12 @@ understand -> plan/design -> approve -> spec and/or design doc + tracking -> imp
 
 - approval before formal tracking
 - `docs/spec/` is for stable behavior and contracts
-- `docs/designs/` is for technical decisions and phases
+- `docs/designs/` is for technical decisions and implementation plans
 - design docs for large technical work only
 - tool defaults live in `../../workflows/`
 - spec updates when behavior, scope, or product intent needs a stable written contract
 - main should stay releasable
 - CI should be thin and build-system-first
 - delivery rules should stay explicit and low-noise enough to trust
+- operational ownership, health checks, rollback, and limits should be explicit
+- stewardship work is real engineering work

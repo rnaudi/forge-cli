@@ -99,6 +99,12 @@ Follow the repository lifecycle:
 understand -> plan/design -> approve -> implement -> review -> commit
 ```
 
+See also:
+
+- `workflows/bootstrap.md` for fresh-checkout setup
+- `workflows/ci.md` for the quality gate
+- `docs/security.md` for secret-handling rules
+
 ## Troubleshooting
 
 Add concrete setup failures here as they are discovered. Keep secret examples to

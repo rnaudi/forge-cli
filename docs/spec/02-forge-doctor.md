@@ -26,6 +26,26 @@ may only surface after a build or test fails.
 `forge doctor` makes those requirements explicit and locally checkable without
 managing secrets or exposing sensitive values.
 
+## Standard and Current Condition
+
+Standard condition:
+
+- a fresh human or agent can discover required local tools, secret names, and
+  private registry readiness checks from the repository
+- the readiness command explains missing setup without exposing secret values
+- required failures produce a non-zero exit status
+
+Current condition:
+
+- this repository has an MVP `forge.bootstrap.toml` and `forge doctor` command
+- the MVP checks local tools, environment-variable presence, and generic HTTP
+  registry readiness
+- follow-up work still needs broader fixtures, config discovery options, and
+  machine-readable output
+
+The gap matters because `forge-cli` is intended to remove bootstrap ambiguity
+without becoming a secret manager or a private setup script.
+
 ## Goals
 
 - Read bootstrap requirements from `forge.bootstrap.toml`.
@@ -48,6 +68,13 @@ managing secrets or exposing sensitive values.
 - Developers bootstrapping a new checkout.
 - Coding agents preparing to work safely in a repository.
 - Maintainers documenting required local setup.
+
+## Cause Analysis
+
+Bootstrap requirements drift because they are often maintained in places that do
+not execute locally: chat, CI configuration, private docs, and individual
+memory. `forge doctor` addresses the executable part of that gap by making
+checks local, reviewable, and safe to run.
 
 ## Proposed Behavior
 
@@ -146,6 +173,14 @@ Warnings alone do not require a non-zero exit.
   and exits `0`.
 - `forge secrets check` and `forge registries check` run only their respective
   check categories.
+
+## Follow-up Measurement
+
+- `cargo run -- doctor` should pass in this repository without private secrets.
+- Future repositories using `forge` should be able to add bootstrap
+  requirements without leaking secret values in reports, tests, or docs.
+- Follow-up issues should track recurring false positives, unclear remediation
+  messages, and registry-check gaps.
 
 ## Open Questions
 
