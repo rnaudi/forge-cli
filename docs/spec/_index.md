@@ -29,3 +29,6 @@ Out of scope for the first milestone:
 - replacing project-specific build or test commands
 
 Technical implementation choices live in `docs/designs/`.
+
+Product direction and candidate future commands are tracked in
+`03-product-direction.md`.

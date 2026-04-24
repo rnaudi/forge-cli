@@ -34,6 +34,9 @@ These references point in one direction:
 
 ## Functional Specs and Technical Design
 
+- [Oxide RFD 0001: Requests for Discussion](https://rfd.shared.oxide.computer/rfd/0001)
+  Shaped the repository's RFD-inspired spec structure: discussion first,
+  decision record after.
 - [Effective Design Docs](https://mmapped.blog/posts/31-effective-design-docs)
   Drove the split between `docs/spec/` and `docs/designs/`.
 - [A3 - Avoid Memos with Agenda](https://entropicthoughts.com/a3-avoid-memos-with-an-agenda)

@@ -54,7 +54,8 @@ exit status for required check failures.
 ## Document Status
 
 Early draft. The initial command behavior is defined in
-`docs/spec/02-forge-doctor.md`.
+`docs/spec/02-forge-doctor.md`. Product direction and candidate future command
+families are defined in `docs/spec/03-product-direction.md`.
 
 ## Relationship to Technical Design Docs
 

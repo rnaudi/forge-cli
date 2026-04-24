@@ -8,6 +8,29 @@ is supposed to do, independently of the current implementation.
 This area should be written from the outside in. Focus on what should exist,
 who it is for, and what behavior must remain true.
 
+## RFD-Inspired Shape
+
+Specs in this repository are inspired by Oxide's RFD model: write a concrete
+request for discussion, circulate it while the decision is still shapeable, and
+preserve the final reasoning for future readers.
+
+Use RFD-style content when a spec is more than a small behavior note:
+
+- metadata near the top: title, status, authors, labels, and discussion link
+  when one exists
+- summary: one short synthesis of the problem and proposed direction
+- context: what is happening now and why it matters
+- determination: the current proposed or accepted decision
+- goals and non-goals: boundaries that reviewers can challenge
+- options considered: real alternatives and what is lost by rejecting them
+- proposal or behavior: the contract being discussed
+- consequences: expected benefits, costs, and risks
+- open questions: unresolved points for review
+- follow-up: what work should become Beads issues after approval
+
+Do not copy external RFD mechanics blindly. Keep specs local, concise, and
+useful for `forge-cli`.
+
 Use this area for:
 
 - product and feature behavior
@@ -30,6 +53,8 @@ implementation plans.
 - error cases
 - acceptance criteria
 - user, customer, or operator impact
+- decisions that affect product direction
+- alternatives and tradeoffs when the path is not obvious
 
 ## Suggested Structure
 
@@ -58,3 +83,8 @@ Use `docs/designs/` when the key questions are:
 - how should we implement it?
 - which technical approach did we choose?
 - what tradeoffs did we accept?
+
+## References
+
+- [Oxide RFD 0001: Requests for Discussion](https://rfd.shared.oxide.computer/rfd/0001)
+- [Oxide public RFD index](https://rfd.shared.oxide.computer/)

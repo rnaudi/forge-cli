@@ -12,4 +12,12 @@ Use it when:
 Do not force every change into a formal spec. Many changes only need a plan or
 design doc.
 
-For the fuller writing guidance, use [guide.md](guide.md).
+For the fuller RFD-inspired writing guidance, use [guide.md](guide.md).
+
+Current spec chapters:
+
+- [01-introduction.md](01-introduction.md): product introduction and first
+  milestone scope
+- [02-forge-doctor.md](02-forge-doctor.md): implemented readiness-check behavior
+- [03-product-direction.md](03-product-direction.md): product direction and
+  candidate future features

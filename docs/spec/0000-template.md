@@ -2,6 +2,9 @@
 title = "Spec Title"
 weight = 0
 status = "draft"
+authors = []
+labels = []
+discussion = ""
 +++
 
 # Spec: Title
@@ -11,7 +14,7 @@ status = "draft"
 One paragraph that explains the problem and the intended outcome in simple
 terms.
 
-## Status
+## Status and Discussion
 
 Suggested states:
 
@@ -21,6 +24,10 @@ Suggested states:
 - implemented
 - superseded
 - abandoned
+
+- Authors:
+- Discussion:
+- Labels:
 
 ## Context
 
@@ -36,6 +43,13 @@ Make the gap explicit:
 - current condition
 - why the gap matters now
 - evidence or examples
+
+## Determination
+
+State the current proposed or accepted decision in one or two paragraphs.
+
+For draft specs, say what decision you want reviewers to evaluate. For
+implemented specs, say what decision was made.
 
 ## Goals
 
@@ -59,6 +73,18 @@ condition?
 
 Distinguish evidence from assumptions.
 
+## Options Considered
+
+Describe real alternatives, including the chosen one.
+
+For each option, include:
+
+- benefits
+- costs or risks
+- what we lose by not choosing it
+
+Use a small comparison table when options are easy to compare.
+
 ## Proposed Behavior
 
 Describe the expected behavior from the outside in.
@@ -79,6 +105,18 @@ Capture relevant constraints such as:
 - operational simplicity
 - backward compatibility
 - rollout constraints
+
+## Consequences
+
+Describe expected positive and negative outcomes.
+
+Include:
+
+- maintenance costs
+- user impact
+- operational impact
+- compatibility risks
+- security or privacy implications
 
 ## Acceptance Criteria
 
