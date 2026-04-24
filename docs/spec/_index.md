@@ -12,11 +12,12 @@ The spec is written from the outside in: it defines user-visible behavior,
 contracts, constraints, and acceptance criteria that implementations should
 preserve.
 
-Initial scope:
+Current command surface:
 
 - `forge doctor`
 - `forge secrets check`
 - `forge registries check`
+- `forge config validate`
 - `forge.bootstrap.toml`
 - environment-variable secret presence checks
 - generic HTTP/private registry reachability checks
@@ -30,5 +31,5 @@ Out of scope for the first milestone:
 
 Technical implementation choices live in `docs/designs/`.
 
-Product direction and candidate future commands are tracked in
-`03-product-direction.md`.
+Product direction, user outcomes, and candidate future command families are
+tracked in `03-product-direction.md`.

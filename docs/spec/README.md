@@ -1,16 +1,19 @@
 # Specs
 
-This directory is for stable behavior, scope, and external contracts that
-deserve durable documentation.
+This directory is for product-level behavior, user experience, scope, and
+external contracts that deserve durable RFD-style discussion.
 
 Use it when:
 
-- behavior should be defined independently of the current implementation
+- user-visible behavior should be defined independently of the current
+  implementation
 - tests should trace back to documented expectations
 - future refactors should preserve a stable contract
+- a decision changes the product direction or user workflow
 
-Do not force every change into a formal spec. Many changes only need a plan or
-ADR.
+Do not create a spec for every feature. Many command-level changes only need a
+Beads issue, tests, README/development docs, or an ADR when the technical choice
+is significant.
 
 For the fuller RFD-inspired writing guidance, use [guide.md](guide.md).
 

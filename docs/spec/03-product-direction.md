@@ -145,12 +145,11 @@ larger product needs clear boundaries before features accumulate.
 - `forge secrets check`: check configured environment-variable requirements.
 - `forge registries check`: check configured registry reachability and auth
   readiness.
+- `forge config validate`: validate `forge.bootstrap.toml` without live probes.
 
 ### Near-Term Candidates
 
 - `forge tools check`: run only configured local tool checks.
-- `forge config validate`: validate `forge.bootstrap.toml` without running
-  network probes.
 - `forge config explain`: print the safe meaning of configured requirements.
 - `forge doctor --config <path>`: run against an explicit config file.
 - `forge doctor --format json`: emit a stable machine-readable report for
@@ -195,6 +194,8 @@ into Beads issues before coding.
 Add `forge config validate` so maintainers and CI can verify config syntax,
 unknown fields, invalid URLs, and secret-value mistakes without running network
 checks.
+
+Status: implemented.
 
 Value:
 

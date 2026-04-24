@@ -15,6 +15,11 @@ pub struct Cli {
 pub enum ForgeCommand {
     /// Run all configured bootstrap checks.
     Doctor,
+    /// Validate bootstrap configuration.
+    Config {
+        #[command(subcommand)]
+        command: ConfigCommand,
+    },
     /// Check configured secret requirements.
     Secrets {
         #[command(subcommand)]
@@ -31,6 +36,9 @@ impl ForgeCommand {
     pub fn scope(self) -> CheckScope {
         match self {
             Self::Doctor => CheckScope::All,
+            Self::Config {
+                command: ConfigCommand::Validate,
+            } => CheckScope::Config,
             Self::Secrets {
                 command: SecretsCommand::Check,
             } => CheckScope::Secrets,
@@ -39,6 +47,12 @@ impl ForgeCommand {
             } => CheckScope::Registries,
         }
     }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Subcommand)]
+pub enum ConfigCommand {
+    /// Validate forge.bootstrap.toml without running live checks.
+    Validate,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Subcommand)]
@@ -56,6 +70,7 @@ pub enum RegistriesCommand {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum CheckScope {
     All,
+    Config,
     Secrets,
     Registries,
 }
@@ -71,6 +86,13 @@ mod tests {
         let cli = Cli::parse_from(["forge", "doctor"]);
 
         assert_eq!(cli.command.scope(), CheckScope::All);
+    }
+
+    #[test]
+    fn parses_config_validate_command() {
+        let cli = Cli::parse_from(["forge", "config", "validate"]);
+
+        assert_eq!(cli.command.scope(), CheckScope::Config);
     }
 
     #[test]

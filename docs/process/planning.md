@@ -4,7 +4,8 @@ This document describes how to plan and design new work.
 
 The key document split is:
 
-- `docs/spec/` for RFD-style behavior, scope, and product contracts
+- `docs/spec/` for RFD-style user workflows, outcomes, scope, and product
+  contracts
 - `docs/designs/` for ADR-style technical decisions, tradeoffs, and
   implementation phases
 
@@ -64,8 +65,8 @@ Characteristics:
 
 Output:
 
-- spec in `docs/spec/` when product behavior, scope, or user
-  impact must be made explicit
+- spec in `docs/spec/` when product direction, user workflow, scope, or user
+  impact needs RFD-style discussion
 - ADR in `docs/designs/NNNN-<title>.md` when technical approach or
   implementation tradeoffs must be chosen
 - tracking parent plus subtasks after approval, when the project uses tracking
@@ -89,8 +90,8 @@ selected adapter in `../../workflows/`.
 
 1. Decide which artifacts are required:
 
-- **Spec only** when the core problem is product behavior, user-facing flow,
-  workflow definition, or contract definition
+- **Spec only** when the core problem is product direction, user-facing flow,
+  workflow definition, or durable contract definition
 - **ADR only** when the problem is mainly technical and the product
   behavior is already clear
 - **Spec + ADR** when product intent and technical approach both need
@@ -102,7 +103,7 @@ The spec should cover:
 
 - metadata, status, and discussion link when one exists
 - summary that synthesizes the problem and proposed direction
-- problem, current condition, and target condition
+- user problem, current condition, and target condition
 - determination or proposed decision
 - goals and non-goals
 - user or operator impact
@@ -151,7 +152,7 @@ or plan.
 
 For RFD-style specs, check:
 
-- the problem is clear before the solution
+- the user problem is clear before the solution
 - goals and non-goals make scope reviewable
 - determination says what decision is being requested
 - options and consequences are honest

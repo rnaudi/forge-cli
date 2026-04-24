@@ -44,6 +44,14 @@ pub fn run_with_dependencies(
         }
     };
 
+    if matches!(scope, CheckScope::Config) {
+        return ReadinessReport::new(vec![CheckResult::ok(
+            Category::Config,
+            config_path.display().to_string(),
+            "bootstrap config is valid",
+        )]);
+    }
+
     let mut results = Vec::new();
 
     if matches!(scope, CheckScope::All) {
@@ -108,6 +116,37 @@ mod tests {
         }
     }
 
+    struct PanickingEnvironment;
+
+    impl Environment for PanickingEnvironment {
+        fn var_os(&self, name: &str) -> Option<OsString> {
+            panic!("config validation should not read environment variable {name}");
+        }
+    }
+
+    struct PanickingToolResolver;
+
+    impl ToolResolver for PanickingToolResolver {
+        fn command_exists(&self, command: &str, _environment: &dyn Environment) -> bool {
+            panic!("config validation should not resolve tool command {command}");
+        }
+    }
+
+    struct PanickingRegistryClient;
+
+    impl RegistryClient for PanickingRegistryClient {
+        fn check(
+            &self,
+            registry: &config::RegistryRequirement,
+            _auth: Option<&ResolvedAuth>,
+        ) -> Result<RegistryResponse, RegistryProbeError> {
+            panic!(
+                "config validation should not probe registry {}",
+                registry.name
+            );
+        }
+    }
+
     struct FakeRegistryClient {
         calls: Cell<usize>,
     }
@@ -165,6 +204,80 @@ mod tests {
         assert_eq!(registry_client.calls.get(), 0);
         assert_eq!(report.results().len(), 1);
         assert!(!report.render().contains("secret-value"));
+    }
+
+    #[test]
+    fn config_validate_should_not_run_live_checks() {
+        let directory = tempdir().expect("create temp dir");
+        let config_path = directory.path().join(CONFIG_FILE);
+        fs::write(
+            &config_path,
+            r#"
+                [[tools]]
+                name = "Missing tool"
+                command = "definitely-not-installed"
+                required = true
+
+                [[secrets]]
+                name = "Token"
+                env = "FORGE_TEST_TOKEN"
+                required = true
+
+                [[registries]]
+                name = "Registry"
+                url = "https://registry.example.test/ping"
+                required = true
+            "#,
+        )
+        .expect("write config");
+
+        let report = run_with_dependencies(
+            CheckScope::Config,
+            &config_path,
+            &PanickingEnvironment,
+            &PanickingToolResolver,
+            &PanickingRegistryClient,
+        );
+
+        assert_eq!(report.exit_code(), 0);
+        assert_eq!(
+            report.results(),
+            &[CheckResult::ok(
+                Category::Config,
+                config_path.display().to_string(),
+                "bootstrap config is valid",
+            )]
+        );
+    }
+
+    #[test]
+    fn config_validate_should_report_invalid_config_without_live_checks() {
+        let directory = tempdir().expect("create temp dir");
+        let config_path = directory.path().join(CONFIG_FILE);
+        fs::write(
+            &config_path,
+            r#"
+                [[registries]]
+                name = "Registry"
+                url = "https://secret-value@registry.example.test/ping"
+            "#,
+        )
+        .expect("write config");
+
+        let report = run_with_dependencies(
+            CheckScope::Config,
+            &config_path,
+            &PanickingEnvironment,
+            &PanickingToolResolver,
+            &PanickingRegistryClient,
+        );
+
+        let rendered = report.render();
+
+        assert_eq!(report.exit_code(), 1);
+        assert!(rendered.contains("ERR"));
+        assert!(rendered.contains("must not include credentials"));
+        assert!(!rendered.contains("secret-value"));
     }
 
     #[test]

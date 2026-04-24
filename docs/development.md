@@ -35,6 +35,7 @@ During development, run the binary through Cargo:
 
 ```bash
 cargo run -- doctor
+cargo run -- config validate
 cargo run -- secrets check
 cargo run -- registries check
 ```

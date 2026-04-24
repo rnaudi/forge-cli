@@ -1,12 +1,13 @@
 # Project Specification
 
-This directory is for the full project specification.
+This directory is for product-level RFD-style specifications.
 
 Over time, this should become the stable written description of what the system
-is supposed to do, independently of the current implementation.
+is supposed to accomplish for users, independently of the current
+implementation.
 
-This area should be written from the outside in. Focus on what should exist,
-who it is for, and what behavior must remain true.
+This area should be written from the outside in. Focus on the user workflow,
+the outcome being protected, and the product contract that must remain true.
 
 ## RFD-Inspired Shape
 
@@ -14,7 +15,8 @@ Specs in this repository are inspired by Oxide's RFD model: write a concrete
 request for discussion, circulate it while the decision is still shapeable, and
 preserve the final reasoning for future readers.
 
-Use RFD-style content when a spec is more than a small behavior note:
+Use RFD-style content when the work changes product direction, user experience,
+or a durable external contract:
 
 - metadata near the top: title, status, authors, labels, and discussion link
   when one exists
@@ -23,7 +25,7 @@ Use RFD-style content when a spec is more than a small behavior note:
 - determination: the current proposed or accepted decision
 - goals and non-goals: boundaries that reviewers can challenge
 - options considered: real alternatives and what is lost by rejecting them
-- proposal or behavior: the contract being discussed
+- proposal or behavior: the user workflow or contract being discussed
 - consequences: expected benefits, costs, and risks
 - open questions: unresolved points for review
 - follow-up: what work should become Beads issues after approval
@@ -31,9 +33,14 @@ Use RFD-style content when a spec is more than a small behavior note:
 Do not copy external RFD mechanics blindly. Keep specs local, concise, and
 useful for `forge-cli`.
 
+Do not write a new spec for every CLI command or small feature. Prefer a Beads
+issue plus tests and local docs unless the change needs product-level
+discussion.
+
 Use this area for:
 
-- product and feature behavior
+- product behavior
+- user workflows and outcomes
 - user-visible rules
 - domain constraints
 - interface contracts
@@ -53,7 +60,7 @@ implementation plans.
 - error cases
 - acceptance criteria
 - user, customer, or operator impact
-- decisions that affect product direction
+- decisions that affect product direction or user experience
 - alternatives and tradeoffs when the path is not obvious
 
 ## Suggested Structure
@@ -77,6 +84,7 @@ Use `docs/spec/` when the key questions are:
 - who is it for?
 - what behavior is expected?
 - what constraints or acceptance criteria matter?
+- what user outcome are we preserving?
 
 Use `docs/designs/` when the key questions are:
 

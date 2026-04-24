@@ -39,6 +39,8 @@ behavior remains easy to test without invoking a subprocess.
 Initial commands:
 
 - `forge doctor`: runs all configured checks and prints one readiness report.
+- `forge config validate`: validates `forge.bootstrap.toml` without running
+  local probes.
 - `forge secrets check`: checks configured environment-variable requirements.
 - `forge registries check`: checks configured private registry URLs.
 

@@ -30,6 +30,7 @@ Initial commands:
 
 ```bash
 forge doctor
+forge config validate
 forge secrets check
 forge registries check
 ```
