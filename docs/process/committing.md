@@ -73,7 +73,7 @@ docs: add design template for large changes
 process: clarify implementation workflow
 
 Clarify how approved plans become tracked work and how large changes
-stay aligned with design docs.
+stay aligned with ADRs.
 
 Related to <tracking-id>
 ```

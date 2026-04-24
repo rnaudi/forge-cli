@@ -31,7 +31,7 @@ Before specializing, confirm the smallest useful set of constraints:
 4. If the project has stable external behavior or scope worth preserving, start
    the first spec in `docs/spec/`.
 5. If the project needs a meaningful technical decision record, create the
-   first design doc in `docs/designs/`.
+   first ADR in `docs/designs/`.
 6. Choose or update the concrete workflow adapter in `workflows/`.
 7. Fill in `docs/security.md` if the project needs secrets, protected data, or
    internal access.
@@ -44,7 +44,7 @@ Before specializing, confirm the smallest useful set of constraints:
 
 Documentation should create execution, not replace it.
 
-Before writing deep specs or design docs, identify the smallest useful
+Before writing deep specs or ADRs, identify the smallest useful
 validation path. Examples:
 
 - a build command
@@ -60,7 +60,7 @@ adapter.
 ## Decision Rules
 
 - If the main uncertainty is user-visible behavior, write a spec first.
-- If the main uncertainty is technical approach, write a design doc first.
+- If the main uncertainty is technical approach, write an ADR first.
 - If the change is small and obvious, a brief plan may be enough.
 - If a template section is not true for the real project, replace it rather
   than preserving it as doctrine.
@@ -71,7 +71,7 @@ Do not:
 
 - fill every placeholder immediately
 - create fake commands to make the repo look complete
-- write design docs for obvious or single-session changes
+- write ADRs for obvious or single-session changes
 - keep claiming portability where the project has chosen concrete tools
 - put tool-specific commands in `docs/process/`
 - write more process than the project can execute

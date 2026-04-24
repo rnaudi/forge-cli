@@ -84,10 +84,35 @@ These references point in one direction:
 
 ## Testing and Review Culture
 
+- [Arnau's Testing Links](https://arnau.bearblog.dev/links/)
+  Seeded the local testing reading list and resource-boundary testing style.
+- [Apollo GraphQL Rust Best Practices](https://github.com/apollographql/rust-best-practices)
+  Informed the project Rust style guide.
+- [Matklad: How to Test](https://matklad.github.io/2021/05/31/how-to-test.html)
+  Reinforced feature-oriented and boundary-oriented tests.
+- [Matklad: Unit and Integration Tests](https://matklad.github.io/2022/07/04/unit-and-integration-tests.html)
+  Helped frame test boundaries around behavior and resources.
+- [The argument against clearing the database between tests](https://calpaterson.com/against-database-teardown.html)
+  Informed the dirty-resource testing guidance.
+- [Why Good Developers Write Bad Unit Tests](https://mtlynch.io/good-developers-bad-tests/)
+  Reinforced tests as maintainable change detectors.
+- [SMURF: Beyond the Test Pyramid](https://testing.googleblog.com/2024/10/smurf-beyond-test-pyramid.html)
+  Added speed, maintainability, utilization, reliability, and fidelity as test
+  suite tradeoffs.
+- [Risk-Driven Testing](https://testing.googleblog.com/2014/05/testing-on-toilet-risk-driven-testing.html)
+  Informed the risk-driven coverage guidance.
+- [Test Sizes](https://testing.googleblog.com/2010/12/test-sizes.html)
+  Informed the resource-based test-size table.
+- [Testing on error handling code](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-yuan.pdf)
+  Reinforced explicit error-path testing.
+- [TODOs aren't for doing](https://sophiebits.com/2025/07/21/todos-arent-for-doing)
+  Informed the distinction between useful context comments and tracked work.
 - [Go Commit Messages](https://go.dev/wiki/CommitMessage)
   Shaped the `area: lowercase summary` convention used for forge commits.
 - [Write tests. Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests)
   Default testing philosophy should be explicit and pragmatic.
+- [Code Comments](https://raw.githubusercontent.com/rnaudi/gh-log/main/docs/comments.md)
+  Shaped the project documentation and comment taxonomy.
 - [Look for What's True](https://dubroy.com/blog/look-for-whats-true/)
   Review should optimize for truth-seeking, not winning.
 - [The cults of TDD and GenAI](https://drewdevault.com/2026/01/29/2026-01-29-Cult-of-TDD-and-LLMs.html)

@@ -27,6 +27,7 @@ If the repo is already specialized or the task is ordinary project work:
 | Plan or design the work | [planning.md](planning.md) |
 | Implement approved work | [implementation.md](implementation.md) |
 | Review a change | [code-review.md](code-review.md) |
+| Review a spec or ADR | [planning.md](planning.md#reviewing-specs-and-adrs) |
 | Prepare a commit | [committing.md](committing.md) |
 | Design operational behavior | [operability.md](operability.md) |
 | Triage or maintain project queues | [stewardship.md](stewardship.md) |
@@ -39,7 +40,7 @@ If the repo is already specialized or the task is ordinary project work:
 
 - 1-3 files or one bounded change
 - one focused session
-- no design doc needed
+- no ADR needed
 
 Workflow:
 
@@ -56,15 +57,16 @@ understand -> plan -> approve -> optional tracking -> implement -> review -> com
 Workflow:
 
 ```
-understand -> plan/design -> approve -> spec and/or design doc + tracking -> implement -> review -> commit
+understand -> plan/design -> approve -> spec and/or ADR + tracking -> implement -> review -> commit
 ```
 
 ## Principles
 
 - approval before formal tracking
 - `docs/spec/` is for stable behavior and contracts
-- `docs/designs/` is for technical decisions and implementation plans
-- design docs for large technical work only
+- `docs/designs/` is for ADR-style technical decisions and implementation plans
+- ADRs for large technical work only
+- agents run both mechanical checks and guide-based self-review before handoff
 - tool defaults live in `../../workflows/`
 - spec updates when behavior, scope, or product intent needs a stable written contract
 - main should stay releasable

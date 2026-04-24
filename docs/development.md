@@ -45,7 +45,7 @@ After building, the installed command name is:
 forge doctor
 ```
 
-## Tidy
+## Mechanical Quality Gate
 
 Run the full local quality gate before commit:
 
@@ -55,23 +55,53 @@ cargo test
 cargo clippy --all-targets --all-features -- -D warnings
 ```
 
+Also run the relevant smoke command when behavior changes. For the current
+checkout:
+
+```bash
+cargo run -- doctor
+```
+
+## Guide Quality Gate
+
+Mechanical checks are necessary but not enough. Before returning work as ready
+for human approval, review, or commit, apply the relevant repo guides:
+
+- Rust code changes: `docs/rust.md`
+- test changes or test gaps: `docs/testing.md`
+- docs and comments: `docs/documentation.md`
+- implementation review: `docs/process/code-review.md`
+- spec or ADR changes: `docs/process/planning.md#reviewing-specs-and-adrs`
+- secret, credential, registry, or protected-data changes: `docs/security.md`
+
+The handoff should mention which gates ran and any gate that was skipped or
+could not run.
+
 ## Testing Strategy
 
-- Unit tests cover config parsing, validation decisions, report status
-  aggregation, and exit-code behavior.
-- Tests must not require real secret values or access to a private registry.
-- Registry reachability tests should use local or mocked HTTP endpoints.
-- Every change that affects command behavior should be traceable to a spec or
-  design doc update.
+See `docs/testing.md` for test design rules.
+
+Project-specific expectations:
+
+- unit tests cover config parsing, validation decisions, report status
+  aggregation, and exit-code behavior
+- tests must not require real secret values or access to a private registry
+- registry reachability tests should use local or mocked HTTP endpoints
+- every change that affects command behavior should be traceable to a spec or
+  ADR update
 
 ## Coding Conventions
 
-- Use `clap` for command parsing.
-- Keep command handlers small and delegate checks to testable modules.
-- Treat missing required checks as failures, optional missing checks as
-  warnings, and successful checks as OK.
-- Never print, persist, log, or commit secret values. Reports may include secret
-  names, but not secret contents.
+See `docs/rust.md` for Rust style.
+
+Project-specific expectations:
+
+- use `clap` for command parsing
+- keep command handlers small and delegate checks to testable modules
+- treat missing required checks as failures, optional missing checks as
+  warnings, and successful checks as OK
+- never print, persist, log, or commit secret values; reports may include secret
+  names, but not secret contents
 
 ## Environment
 
@@ -101,6 +131,9 @@ See also:
 
 - `workflows/bootstrap.md` for fresh-checkout setup
 - `workflows/ci.md` for the quality gate
+- `docs/rust.md` for Rust style
+- `docs/testing.md` for testing style
+- `docs/documentation.md` for prose and code-comment style
 - `docs/security.md` for secret-handling rules
 
 ## Troubleshooting

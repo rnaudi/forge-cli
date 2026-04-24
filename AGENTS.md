@@ -45,6 +45,9 @@ Task-specific docs:
 Project-specific context:
 
 - development commands: `docs/development.md`
+- Rust style: `docs/rust.md`
+- testing style: `docs/testing.md`
+- documentation style: `docs/documentation.md`
 - architecture: `docs/architecture.md`
 - bootstrap contract: `workflows/bootstrap.md`
 - CI and quality gates: `workflows/ci.md`
@@ -75,6 +78,9 @@ Do not read the whole repo by default.
 - `docs/architecture.md` is the project-wide structural overview
 - `docs/development.md` is the concrete project's build, test, run, and
   environment guide
+- `docs/rust.md` is the Rust coding style guide
+- `docs/testing.md` is the testing style guide
+- `docs/documentation.md` is the prose and code-comment style guide
 - `docs/process/` is for workflow rules used while shaping and changing the
   project
 - `docs/notes/` is for low-friction notes that are not yet curated docs
@@ -100,11 +106,32 @@ Definitions:
   doc, or both
 - `approve`: get approval before formal tracking and implementation
 - `implement`: execute one coherent bounded slice
-- `review`: check correctness, risk, and drift from the approved artifacts
+- `review`: run mechanical checks and self-review against the repo guides
 - `commit`: create a clean commit and update tracking
 
 Do not skip straight to implementation when the problem or scope is still
 unclear.
+
+## Agent Handoff Gate
+
+Before telling a human that work is ready for approval, review, or commit, an
+agent must run the applicable quality gates:
+
+- mechanical gate: format, tests, lint, and smoke checks from
+  `docs/development.md` and `workflows/ci.md`
+- Rust style gate for Rust changes: `docs/rust.md`
+- testing gate for test changes or missing tests: `docs/testing.md`
+- documentation gate for prose, comments, specs, or ADRs:
+  `docs/documentation.md`
+- code/PR review gate for implementation changes:
+  `docs/process/code-review.md`
+- spec/ADR review gate for planning artifacts:
+  `docs/process/planning.md#reviewing-specs-and-adrs`
+- security gate for secrets, credentials, registry checks, or protected data:
+  `docs/security.md`
+
+If a gate is not applicable, say so briefly in the handoff. If a gate cannot be
+run, report that explicitly with the reason.
 
 ## Default Workflow Adapter
 

@@ -7,14 +7,14 @@ This document describes how to implement approved work.
 Before implementing:
 
 1. a plan exists
-2. large work has the required spec and/or design doc artifacts
+2. large work has the required spec and/or ADR artifacts
 3. the work is small enough for one session, or has been split
 
 ## Step 1: Load Context
 
 1. Read the tracking item if the project uses a tracker. Use the selected
    workflow adapter in `../../workflows/`.
-2. For large work, read the relevant spec in `docs/spec/` and design doc in
+2. For large work, read the relevant spec in `docs/spec/` and ADR in
    `docs/designs/` when present.
 3. Mark the tracking item as in progress when the project uses a tracker.
 
@@ -45,9 +45,9 @@ If needed, create subtasks using the selected workflow adapter.
 4. Add or update tests first when practical.
 5. Make code changes.
 6. Run the fastest relevant verification.
-7. For large work, update tracking and any affected specs or design docs.
+7. For large work, update tracking and any affected specs or ADRs.
 
-## Step 4: Verify
+## Step 4: Verify Mechanically
 
 Run the project-appropriate checks. Prefer the smallest command that gives real
 confidence first, then broader checks before commit.
@@ -60,19 +60,37 @@ Examples:
 - typecheck
 - build
 
-## Step 5: Update Progress
+For `forge-cli`, the full mechanical gate is documented in
+`docs/development.md` and `../../workflows/ci.md`.
+
+## Step 5: Self-Review Against Guides
+
+Before returning to a human for approval, review, or commit, apply the relevant
+repo guides:
+
+- `docs/rust.md` for Rust changes
+- `docs/testing.md` for tests and test coverage
+- `docs/documentation.md` for prose and code comments
+- `docs/process/code-review.md` for implementation changes
+- `docs/process/planning.md#reviewing-specs-and-adrs` for specs and ADRs
+- `docs/security.md` for secrets, credentials, registries, or protected data
+
+This guide review is part of the quality gate. Treat findings the same way as
+test failures: fix blocking issues before handoff.
+
+## Step 6: Update Progress
 
 Update the relevant tracking item when the project uses a tracker.
 
-Do not edit a design doc just to mark task progress. Edit it only when the
-design itself changed; for major direction changes, write a follow-up design
-doc that references the original.
+Do not edit an ADR just to mark task progress. Edit it only when the decision
+itself changed; for major direction changes, write a follow-up ADR that
+references the original.
 
-## Step 6: Review and Commit
+## Step 7: Review and Commit
 
 Before committing:
 
-1. follow `code-review.md`
+1. complete the guide self-review above
 2. fix blocking issues
 3. follow `committing.md`
 
@@ -81,4 +99,4 @@ Before committing:
 - each commit should leave the repo in a coherent state
 - split oversized work instead of forcing it through one session
 - stable behavior changes should usually have spec documentation
-- major technical direction changes should usually have design documentation
+- major technical direction changes should usually have an ADR

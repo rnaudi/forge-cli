@@ -12,7 +12,7 @@ For incoming work or reports, decide:
 - is this a bug, feature request, question, maintenance task, or design issue?
 - is there enough information to reproduce or evaluate it?
 - is it still relevant to supported versions or current scope?
-- does it belong in a spec, design doc, note, or tracker?
+- does it belong in a spec, ADR, note, or tracker?
 - who owns the next action?
 
 ## Reproduction Standard

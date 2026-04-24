@@ -4,8 +4,9 @@ This document describes how to plan and design new work.
 
 The key document split is:
 
-- `docs/spec/` for stable behavior, scope, and contracts
-- `docs/designs/` for technical decisions, tradeoffs, and implementation plans
+- `docs/spec/` for RFD-style behavior, scope, and product contracts
+- `docs/designs/` for ADR-style technical decisions, tradeoffs, and
+  implementation phases
 
 ## When to Plan
 
@@ -45,7 +46,7 @@ Characteristics:
 - touches a small number of files
 - one concept or bounded change
 - can fit in one focused session
-- no design doc required
+- no ADR required
 
 Output:
 
@@ -65,7 +66,7 @@ Output:
 
 - spec in `docs/spec/` when product behavior, scope, or user
   impact must be made explicit
-- design doc in `docs/designs/NNNN-<title>.md` when technical approach or
+- ADR in `docs/designs/NNNN-<title>.md` when technical approach or
   implementation tradeoffs must be chosen
 - tracking parent plus subtasks after approval, when the project uses tracking
 
@@ -90,19 +91,24 @@ selected adapter in `../../workflows/`.
 
 - **Spec only** when the core problem is product behavior, user-facing flow,
   workflow definition, or contract definition
-- **Design doc only** when the problem is mainly technical and the product
+- **ADR only** when the problem is mainly technical and the product
   behavior is already clear
-- **Spec + design doc** when product intent and technical approach both need
+- **Spec + ADR** when product intent and technical approach both need
   explicit treatment
 
 2. If a spec is needed, start from the templates in `docs/spec/`.
 
 The spec should cover:
 
+- metadata, status, and discussion link when one exists
+- summary that synthesizes the problem and proposed direction
 - problem, current condition, and target condition
+- determination or proposed decision
 - goals and non-goals
 - user or operator impact
 - evidence or cause analysis
+- options considered when there is a real product choice
+- consequences
 - constraints
 - open questions
 - acceptance criteria or stable behavioral expectations
@@ -134,7 +140,33 @@ cp docs/designs/0000-template.md docs/designs/NNNN-<title>.md
 6. After approval, create tracking with one parent and one item per approved
    phase if the project uses a tracker.
 
-7. Link the tracking items from the spec or design doc only when useful.
+7. Link the tracking items from the spec or ADR only when useful.
+
+## Reviewing Specs and ADRs
+
+Before approval, review the document as a communication artifact.
+
+Agents should perform this review before asking a human to approve a spec, ADR,
+or plan.
+
+For RFD-style specs, check:
+
+- the problem is clear before the solution
+- goals and non-goals make scope reviewable
+- determination says what decision is being requested
+- options and consequences are honest
+- open questions are explicit
+- accepted follow-up can become Beads work
+
+For ADRs, check:
+
+- metadata and status are present
+- context explains why the decision exists
+- decision and rationale are distinct
+- alternatives include real tradeoffs
+- implementation phases are independently reviewable
+- spec impact is named when behavior changes
+- future maintainers can understand why this choice was made
 
 ## Decision Memory
 
@@ -147,13 +179,13 @@ At minimum, capture:
 - rationale
 - alternatives considered
 - follow-up owner or tracking item
-- links to the affected spec, design doc, or note
+- links to the affected spec, ADR, or note
 
 Use `docs/notes/` for rough memory when the decision is not yet curated.
 
 ## Step 4: Get Approval
 
-Do not create tracking until the user approves the plan, spec, or design doc.
+Do not create tracking until the user approves the plan, spec, or ADR.
 
 That keeps exploration cheap and avoids cluttering the tracker with abandoned
 ideas.
@@ -163,7 +195,7 @@ ideas.
 | Work Size | Artifacts |
 |-----------|-----------|
 | Small | brief plan + optional tracking item |
-| Large | spec and/or design doc + optional tracking parent and subtasks |
+| Large | spec and/or ADR + optional tracking parent and subtasks |
 
 ## Next Step
 

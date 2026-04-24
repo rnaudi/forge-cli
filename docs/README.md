@@ -14,6 +14,9 @@ Use it for:
 
 - [architecture.md](architecture.md): stable project architecture overview
 - [development.md](development.md): contributor operating manual for the concrete project
+- [rust.md](rust.md): Rust coding style for `forge-cli`
+- [testing.md](testing.md): testing style and test design rules
+- [documentation.md](documentation.md): prose and code-comment style
 - [security.md](security.md): secrets, protected data, and access-boundary rules
 - [references.md](references.md): curated readings that shaped the project
 
@@ -39,6 +42,9 @@ Use it for:
 - use `designs/` for ADR-style technical decisions and tradeoffs
 - use `architecture.md` for the system shape as a whole
 - use `development.md` for concrete contributor commands and environment rules
+- use `rust.md` for Rust code style
+- use `testing.md` for test design and verification style
+- use `documentation.md` for prose and code-comment style
 - use `security.md` for secrets, protected data, and access boundaries
 - use `process/` for the workflow around planning, implementation, review, and commit
 - use `workflows/` for tool-specific commands that implement the process

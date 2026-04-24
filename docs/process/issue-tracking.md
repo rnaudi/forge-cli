@@ -34,7 +34,7 @@ For large work, create one parent item plus one item per approved phase.
 ## Best Practices
 
 - keep titles short and clear
-- put deep reasoning in specs or design docs, not tracker text
+- put deep reasoning in specs or ADRs, not tracker text
 - prefer machine-readable output when the tool supports it
 - commit local tracker files with related code or docs changes when the tracker
   is version-controlled
