@@ -3,8 +3,8 @@
 Use the tracker chosen by the project. Tracking can be local, hosted, or absent
 for very small projects.
 
-The default project adapter uses `bd` when tracking is needed and is documented
-in `../../workflows/jj-bd.md`.
+This project uses Beads (`bd`) for local issue tracking. The concrete workflow
+adapter is documented in `../../workflows/jj-bd.md`.
 
 ## Why Track Work
 
@@ -25,6 +25,7 @@ open -> in_progress -> closed
 2. Small work gets one tracking item.
 3. Large work gets one parent item plus subtasks.
 4. Close tracking items before the commit that completes them when practical.
+5. Use noninteractive commands and `--json` output in agent sessions.
 
 ## Epics and Subtasks
 
@@ -37,3 +38,4 @@ For large work, create one parent item plus one item per approved phase.
 - prefer machine-readable output when the tool supports it
 - commit local tracker files with related code or docs changes when the tracker
   is version-controlled
+- do not use tracker commands that open an editor in normal agent workflow

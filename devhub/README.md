@@ -18,7 +18,7 @@ contributors and agents should see quickly, such as:
 - Required local quality gate lives in `workflows/ci.md` and is enforced by
   `.github/workflows/ci.yml`.
 - Bootstrap path lives in `workflows/bootstrap.md`.
-- `bd` tracking is planned for follow-up work, but not required for the MVP.
+- Beads tracking is active. Use `bd ready --json` for available tracked work.
 
 Avoid turning DevHub into a second documentation hierarchy. Link to the source
 docs instead.

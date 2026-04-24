@@ -33,6 +33,7 @@ Task-specific docs:
 - implementation work: `docs/process/implementation.md`
 - review work: `docs/process/code-review.md`
 - commit work: `docs/process/committing.md`
+- issue tracking: `docs/process/issue-tracking.md`
 - operability work: `docs/process/operability.md`
 - stewardship or triage work: `docs/process/stewardship.md`
 - tool or workflow setup: `workflows/README.md`
@@ -111,10 +112,11 @@ Project workflow defaults live in `workflows/jj-bd.md`:
 
 - version control: `jj`
 - work tracking: `bd` when tracking is needed
+- active tracker: Beads (`bd`) with repo state in `.beads/`
 
-The first MVP does not require `bd` to build or run. Start using `bd` for
-follow-up work once tracking is needed. If the project chooses different tools,
-use the closest project-specific equivalent and update `workflows/`.
+Use `bd` for approved follow-up work and handoff-worthy tasks. If the project
+chooses different tools, use the closest project-specific equivalent and update
+`workflows/`.
 
 ## Portability
 

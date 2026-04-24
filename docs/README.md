@@ -26,6 +26,8 @@ Use it for:
   and operational breadcrumbs
 - [../workflows/README.md](../workflows/README.md): concrete tool adapters for
   version control, tracking, and local workflow commands
+- [../.beads/README.md](../.beads/README.md): Beads issue-tracking state and
+  repository-local tracker notes
 - [../.github/workflows/](../.github/workflows/): executable GitHub Actions
   checks
 - [../devhub/README.md](../devhub/README.md): lightweight internal project
@@ -40,6 +42,7 @@ Use it for:
 - use `security.md` for secrets, protected data, and access boundaries
 - use `process/` for the workflow around planning, implementation, review, and commit
 - use `workflows/` for tool-specific commands that implement the process
+- use `.beads/` for repo-local Beads issue-tracking metadata
 - use `.github/workflows/` for executable CI checks
 - use `devhub/` for contributor-facing status, release, benchmark, and triage surfaces
 - use `notes/` when writing something quickly is better than not writing it at

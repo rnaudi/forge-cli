@@ -8,9 +8,7 @@ checkout.
 - Rust stable toolchain
 - Cargo
 - `jj` for version control
-
-`bd` is the intended follow-up tracker, but it is not required to build, test,
-or run the MVP.
+- Beads (`bd`) for issue tracking
 
 ## Fresh Checkout
 
@@ -20,6 +18,7 @@ From the repository root:
 cargo build
 cargo test
 cargo run -- doctor
+bd status --json
 ```
 
 The expected local readiness check is:
@@ -41,6 +40,7 @@ Agents should be able to:
 - detect missing tools with `forge doctor`
 - report missing credentials without printing secret values
 - run `cargo test` for functional validation
+- inspect approved follow-up work with `bd ready --json`
 - avoid destructive environment changes unless explicitly approved
 
 ## Keep It Boring

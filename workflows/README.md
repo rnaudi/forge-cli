@@ -18,7 +18,7 @@ Keep durable process rules in `docs/process/`. Keep concrete commands here.
 
 - [bootstrap.md](bootstrap.md): expected project bootstrap contract
 - [ci.md](ci.md): green-main, tidy, and low-noise automation guidance
-- [jj-bd.md](jj-bd.md): Jujutsu for version control and optional `bd` local
+- [jj-bd.md](jj-bd.md): Jujutsu for version control and Beads (`bd`) for local
   issue tracking
 
 Executable GitHub Actions workflows live in `.github/workflows/`.

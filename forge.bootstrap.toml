@@ -12,3 +12,8 @@ required = true
 name = "Jujutsu"
 command = "jj"
 required = true
+
+[[tools]]
+name = "Beads"
+command = "bd"
+required = true

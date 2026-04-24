@@ -48,4 +48,4 @@ Start with:
 The default workflow remains:
 
 - version control: `jj`
-- tracking: `bd` when follow-up work needs it
+- tracking: Beads (`bd`)

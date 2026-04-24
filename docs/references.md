@@ -91,6 +91,8 @@ These references point in one direction:
 
 ## Stewardship and Internal Surfaces
 
+- [Beads](https://github.com/steveyegge/beads)
+  Provides the repo-local issue tracker used for approved follow-up work.
 - [How to be an Open source Gardener](https://steveklabnik.com/writing/how-to-be-an-open-source-gardener/)
   Triage, docs, and maintenance are real engineering work.
 - [Record Every Meeting](https://rfd.shared.oxide.computer/rfd/0537)

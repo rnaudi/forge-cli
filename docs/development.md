@@ -8,6 +8,7 @@ bootstrap requirements explicit and locally checkable.
 - Rust stable toolchain
 - Cargo
 - `jj` for version control
+- Beads (`bd`) for issue tracking
 
 ## Build
 
@@ -87,11 +88,8 @@ The first milestone supports:
 
 ## Workflow
 
-Use `jj` for version control. The repository keeps the default `jj`/`bd`
-workflow adapter in `workflows/jj-bd.md`, but `bd` is not required for the first
-MVP implementation.
-
-Start using `bd` once follow-up work needs tracking beyond this initial MVP.
+Use `jj` for version control and Beads (`bd`) for issue tracking. The
+repository keeps the concrete adapter in `workflows/jj-bd.md`.
 
 Follow the repository lifecycle:
 
